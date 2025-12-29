@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgv8prdwo77qh"]
+
+[ext_resource type="PackedScene" uid="uid://xdh82s3pxovt" path="res://BLENDER/Prototype.glb" id="1_1fqqq"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_1fqqq"]
+
+[sub_resource type="Sky" id="Sky_1fqqq"]
+
+[sub_resource type="Environment" id="Environment_jdj2l"]
+background_mode = 2
+background_energy_multiplier = 1.65
+sky = SubResource("Sky_1fqqq")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="MAIN3D" type="Node3D"]
+
+[node name="Prototype" parent="." instance=ExtResource("1_1fqqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0.1)
+
+[node name="HorizontalPivot" type="Node3D" parent="."]
+
+[node name="VerticalPivot" type="Node3D" parent="HorizontalPivot"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.7, 32.900005, 1.0999999)
+shape = SubResource("SeparationRayShape3D_1fqqq")
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+fov = 12.8
+
+[node name="WORLD" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WORLD"]
+environment = SubResource("Environment_jdj2l")
+
+[node name="Lights" type="Node" parent="WORLD"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WORLD/Lights"]
+transform = Transform3D(-0.49999982, -0.7500001, 0.43301263, -0.296198, 0.6179452, 0.72829294, -0.8137978, 0.23588885, -0.531121, 0, 3.1000001, 0)
+light_energy = 1.331
+shadow_enabled = true
+
+[node name="SpotLight3DRED" type="SpotLight3D" parent="WORLD/Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202012, 0, -0.34202012, 0.9396927, -2.7, 3.1, 4.7000003)
+light_color = Color(0.5846176, 0.008195126, 0.66420674, 1)
+light_energy = 1.766
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 6.616
+spot_attenuation = 0.22
+spot_angle = 37.62
+
+[node name="SpotLight3D2GREEN" type="SpotLight3D" parent="WORLD/Lights"]
+transform = Transform3D(-0.7127916, 0.51522857, -0.47588626, 0.32139376, 0.8430134, 0.43131712, 0.6234054, 0.15449233, -0.76648414, -4.987116, 7.620543, -10.058546)
+light_color = Color(5.77569e-06, 0.9813996, 0.54617596, 1)
+light_energy = 1.766
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 14.093
+spot_attenuation = 0.22
+spot_angle = 37.62
+
+[node name="SpotLight3D2YELLOW" type="SpotLight3D" parent="WORLD/Lights"]
+transform = Transform3D(0.34202024, 0.3213938, -0.8830223, 7.0012556e-09, 0.9396926, 0.34202006, 0.93969274, -0.116977796, 0.3213938, -11.5, 3.1, 4.7000003)
+light_color = Color(0.9999998, 0.7979115, 0.21672997, 1)
+light_energy = 1.766
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 14.093
+spot_attenuation = 0.22
+spot_angle = 37.62
+
+[node name="SpotLight3DRED2" type="SpotLight3D" parent="WORLD/Lights"]
+transform = Transform3D(0.98480785, 0.05939114, -0.16317588, 1.14149525e-08, 0.9396927, 0.3420201, 0.17364827, -0.33682415, 0.92541677, 1.3110161, 3.1, 8.087471)
+light_color = Color(0.85855263, 0.01621549, 0.3154708, 1)
+light_energy = 2.285
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 9.656
+spot_attenuation = 0.22
+spot_angle = 37.62
+
+[node name="SpotLight3D2GREEN2" type="SpotLight3D" parent="WORLD/Lights"]
+transform = Transform3D(0.14531276, -0.49399376, 0.85723656, 0.3213938, 0.8430134, 0.4313171, -0.93572986, 0.21283463, 0.2812671, 12.54966, 7.620543, 8.223044)
+light_color = Color(5.77569e-06, 0.9813996, 0.54617596, 1)
+light_energy = 1.766
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 14.093
+spot_attenuation = 0.22
+spot_angle = 37.62
+
+[node name="SpotLight3D2YELLOW2" type="SpotLight3D" parent="WORLD/Lights"]
+transform = Transform3D(-0.86602557, -0.17101008, 0.4698463, 1.719425e-08, 0.9396927, 0.34202012, -0.50000006, 0.2961982, -0.81379783, 8.052208, 3.1, -7.2690606)
+light_color = Color(0.9999998, 0.7979115, 0.21672997, 1)
+light_energy = 1.766
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 14.093
+spot_attenuation = 0.22
+spot_angle = 37.62
