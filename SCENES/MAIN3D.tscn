@@ -1,41 +1,82 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgv8prdwo77qh"]
+[gd_scene load_steps=16 format=3 uid="uid://cgv8prdwo77qh"]
 
 [ext_resource type="PackedScene" uid="uid://xdh82s3pxovt" path="res://BLENDER/Prototype.glb" id="1_1fqqq"]
+[ext_resource type="PackedScene" uid="uid://dmjviskywjlop" path="res://BLENDER/BUTTON.glb" id="1_yrw6j"]
+[ext_resource type="PackedScene" uid="uid://cxsd5bw85ol0f" path="res://BLENDER/KNOB.glb" id="2_6euwl"]
+[ext_resource type="PackedScene" uid="uid://4cjs0tj0oce5" path="res://BLENDER/KNOB_Scale10.glb" id="2_ctog8"]
+[ext_resource type="Script" uid="uid://bdcs1ywkehn4l" path="res://SCRIPTS/camera_rig.gd" id="2_jdj2l"]
+[ext_resource type="PackedScene" uid="uid://ce3p2ac3863k6" path="res://BLENDER/BUTTON_BASE.glb" id="2_nihjc"]
+[ext_resource type="Script" uid="uid://4v7gw3kmfa4u" path="res://SCRIPTS/button.gd" id="2_uusqb"]
+[ext_resource type="Script" uid="uid://dk6p1a2078kum" path="res://SCRIPTS/trng_from_audio.gd" id="8_uusqb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ukpf"]
+size = Vector3(1, 0.4517212, 2.109375)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_nihjc"]
+
+[sub_resource type="Sky" id="Sky_nihjc"]
+sky_material = SubResource("PhysicalSkyMaterial_nihjc")
+
+[sub_resource type="Environment" id="Environment_nihjc"]
+background_mode = 2
+sky = SubResource("Sky_nihjc")
+ambient_light_source = 3
+ambient_light_color = Color(0.14638418, 0.56497097, 0.79844666, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nihjc"]
+dof_blur_far_distance = 0.01
+
+[sub_resource type="Compositor" id="Compositor_nihjc"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_1fqqq"]
 
-[sub_resource type="Sky" id="Sky_1fqqq"]
-
-[sub_resource type="Environment" id="Environment_jdj2l"]
-background_mode = 2
-background_energy_multiplier = 1.65
-sky = SubResource("Sky_1fqqq")
-ambient_light_source = 3
-reflected_light_source = 2
-tonemap_mode = 2
-glow_enabled = true
-
 [node name="MAIN3D" type="Node3D"]
 
-[node name="Prototype" parent="." instance=ExtResource("1_1fqqq")]
+[node name="PROTOTYPE_DEVICE" type="Node3D" parent="."]
+
+[node name="BUTTON" parent="PROTOTYPE_DEVICE" instance=ExtResource("1_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 0.9953593, 0.09622795, 0, -0.09622795, 0.9953593, -2.9756613, 0, -5.2362823)
+script = ExtResource("2_uusqb")
+rotation_on = 9.29
+emission_color = Color(0.99215686, 0.42352942, 0, 1)
+emission_energy = 50.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PROTOTYPE_DEVICE/BUTTON"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PROTOTYPE_DEVICE/BUTTON/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05816418, -0.019836903)
+shape = SubResource("BoxShape3D_4ukpf")
+
+[node name="BUTTON_BASE" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9666343, 0, -5.2362823)
+
+[node name="Prototype" parent="PROTOTYPE_DEVICE" instance=ExtResource("1_1fqqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0.1)
 
-[node name="HorizontalPivot" type="Node3D" parent="."]
+[node name="KNOB" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_6euwl")]
+transform = Transform3D(-0.35510692, 0, 0.93482566, 0, 1, 0, -0.93482566, 0, -0.35510692, -3.190158, -0.046522617, 0.075514376)
 
-[node name="VerticalPivot" type="Node3D" parent="HorizontalPivot"]
+[node name="KNOB2" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_6euwl")]
+transform = Transform3D(-0.35510692, 0, 0.93482566, 0, 1, 0, -0.93482566, 0, -0.35510692, 0.94011784, -0.046522617, 0.075514376)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.7, 32.900005, 1.0999999)
-shape = SubResource("SeparationRayShape3D_1fqqq")
-spring_length = 4.0
+[node name="KNOB3" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_6euwl")]
+transform = Transform3D(-0.35510692, 0, 0.93482566, 0, 1, 0, -0.93482566, 0, -0.35510692, 4.787604, -0.046522617, 0.075514376)
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-fov = 12.8
+[node name="KNOB_Scale10" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_ctog8")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, -3.2, 0, 0.07195884)
+
+[node name="KNOB_Scale12" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_ctog8")]
+transform = Transform3D(1.075, 0, 0, 0, 1.075, 0, 0, 0, 1.075, 4.767875, 0, 0.072541356)
+
+[node name="KNOB_Scale11" parent="PROTOTYPE_DEVICE" instance=ExtResource("2_ctog8")]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0.9252373, 0, 0.07476288)
 
 [node name="WORLD" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="WORLD"]
-environment = SubResource("Environment_jdj2l")
+environment = SubResource("Environment_nihjc")
+camera_attributes = SubResource("CameraAttributesPractical_nihjc")
+compositor = SubResource("Compositor_nihjc")
 
 [node name="Lights" type="Node" parent="WORLD"]
 
@@ -103,3 +144,28 @@ distance_fade_enabled = true
 spot_range = 14.093
 spot_attenuation = 0.22
 spot_angle = 37.62
+
+[node name="CameraRig2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5198364, 16.976624, -3.5083008)
+script = ExtResource("2_jdj2l")
+zoom_sensitivity = 4.0
+min_zoom = -15.0
+max_zoom = 200.0
+
+[node name="HorizontalPivot" type="Node3D" parent="CameraRig2"]
+
+[node name="VerticalPivot" type="Node3D" parent="CameraRig2/HorizontalPivot"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig2/HorizontalPivot/VerticalPivot"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.7, 32.900005, 1.0999999)
+shape = SubResource("SeparationRayShape3D_1fqqq")
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig2/HorizontalPivot/VerticalPivot/SpringArm3D"]
+fov = 12.8
+
+[node name="TRNG_FROM_AUDIO" type="Node" parent="."]
+script = ExtResource("8_uusqb")
+
+[connection signal="mouse_entered" from="PROTOTYPE_DEVICE/BUTTON/StaticBody3D" to="PROTOTYPE_DEVICE/BUTTON" method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="PROTOTYPE_DEVICE/BUTTON/StaticBody3D" to="PROTOTYPE_DEVICE/BUTTON" method="_on_static_body_3d_mouse_exited"]
