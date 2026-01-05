@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgv8prdwo77qh"]
+[gd_scene load_steps=17 format=3 uid="uid://cgv8prdwo77qh"]
 
 [ext_resource type="PackedScene" uid="uid://xdh82s3pxovt" path="res://BLENDER/Prototype.glb" id="1_1fqqq"]
+[ext_resource type="PackedScene" uid="uid://7h5025xah1xx" path="res://BLENDER/BACKGROUND.glb" id="1_4ukpf"]
 [ext_resource type="PackedScene" uid="uid://dmjviskywjlop" path="res://BLENDER/BUTTON.glb" id="1_yrw6j"]
 [ext_resource type="PackedScene" uid="uid://cxsd5bw85ol0f" path="res://BLENDER/KNOB.glb" id="2_6euwl"]
 [ext_resource type="PackedScene" uid="uid://4cjs0tj0oce5" path="res://BLENDER/KNOB_Scale10.glb" id="2_ctog8"]
@@ -31,6 +32,9 @@ dof_blur_far_distance = 0.01
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_1fqqq"]
 
 [node name="MAIN3D" type="Node3D"]
+
+[node name="BACKGROUND" parent="." instance=ExtResource("1_4ukpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12701368, 0)
 
 [node name="PROTOTYPE_DEVICE" type="Node3D" parent="."]
 
@@ -81,12 +85,13 @@ compositor = SubResource("Compositor_nihjc")
 [node name="Lights" type="Node" parent="WORLD"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WORLD/Lights"]
-transform = Transform3D(-0.49999982, -0.7500001, 0.43301263, -0.296198, 0.6179452, 0.72829294, -0.8137978, 0.23588885, -0.531121, 0, 3.1000001, 0)
+transform = Transform3D(-0.49999985, -0.7500001, 0.43301266, -0.29619804, 0.6179452, 0.7282929, -0.81379783, 0.23588882, -0.5311211, -28.493607, 3.1000001, 0)
 light_energy = 1.331
 shadow_enabled = true
 
 [node name="SpotLight3DRED" type="SpotLight3D" parent="WORLD/Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202012, 0, -0.34202012, 0.9396927, -2.7, 3.1, 4.7000003)
+visible = false
 light_color = Color(0.5846176, 0.008195126, 0.66420674, 1)
 light_energy = 1.766
 shadow_enabled = true
@@ -97,6 +102,7 @@ spot_angle = 37.62
 
 [node name="SpotLight3D2GREEN" type="SpotLight3D" parent="WORLD/Lights"]
 transform = Transform3D(-0.7127916, 0.51522857, -0.47588626, 0.32139376, 0.8430134, 0.43131712, 0.6234054, 0.15449233, -0.76648414, -4.987116, 7.620543, -10.058546)
+visible = false
 light_color = Color(5.77569e-06, 0.9813996, 0.54617596, 1)
 light_energy = 1.766
 shadow_enabled = true
@@ -107,6 +113,7 @@ spot_angle = 37.62
 
 [node name="SpotLight3D2YELLOW" type="SpotLight3D" parent="WORLD/Lights"]
 transform = Transform3D(0.34202024, 0.3213938, -0.8830223, 7.0012556e-09, 0.9396926, 0.34202006, 0.93969274, -0.116977796, 0.3213938, -11.5, 3.1, 4.7000003)
+visible = false
 light_color = Color(0.9999998, 0.7979115, 0.21672997, 1)
 light_energy = 1.766
 shadow_enabled = true
@@ -117,6 +124,7 @@ spot_angle = 37.62
 
 [node name="SpotLight3DRED2" type="SpotLight3D" parent="WORLD/Lights"]
 transform = Transform3D(0.98480785, 0.05939114, -0.16317588, 1.14149525e-08, 0.9396927, 0.3420201, 0.17364827, -0.33682415, 0.92541677, 1.3110161, 3.1, 8.087471)
+visible = false
 light_color = Color(0.85855263, 0.01621549, 0.3154708, 1)
 light_energy = 2.285
 shadow_enabled = true
@@ -127,6 +135,7 @@ spot_angle = 37.62
 
 [node name="SpotLight3D2GREEN2" type="SpotLight3D" parent="WORLD/Lights"]
 transform = Transform3D(0.14531276, -0.49399376, 0.85723656, 0.3213938, 0.8430134, 0.4313171, -0.93572986, 0.21283463, 0.2812671, 12.54966, 7.620543, 8.223044)
+visible = false
 light_color = Color(5.77569e-06, 0.9813996, 0.54617596, 1)
 light_energy = 1.766
 shadow_enabled = true
@@ -137,6 +146,7 @@ spot_angle = 37.62
 
 [node name="SpotLight3D2YELLOW2" type="SpotLight3D" parent="WORLD/Lights"]
 transform = Transform3D(-0.86602557, -0.17101008, 0.4698463, 1.719425e-08, 0.9396927, 0.34202012, -0.50000006, 0.2961982, -0.81379783, 8.052208, 3.1, -7.2690606)
+visible = false
 light_color = Color(0.9999998, 0.7979115, 0.21672997, 1)
 light_energy = 1.766
 shadow_enabled = true
@@ -161,7 +171,7 @@ fov = 50.0
 script = ExtResource("8_uusqb")
 
 [node name="EMPTY" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.56015, 0, 2.642922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8758974, 0, -2.7013083)
 
 [connection signal="mouse_entered" from="PROTOTYPE_DEVICE/BUTTON/StaticBody3D" to="PROTOTYPE_DEVICE/BUTTON" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="PROTOTYPE_DEVICE/BUTTON/StaticBody3D" to="PROTOTYPE_DEVICE/BUTTON" method="_on_static_body_3d_mouse_exited"]
