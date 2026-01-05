@@ -145,27 +145,23 @@ spot_range = 14.093
 spot_attenuation = 0.22
 spot_angle = 37.62
 
-[node name="CameraRig2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5198364, 16.976624, -3.5083008)
+[node name="CameraRig2" type="Node3D" parent="." node_paths=PackedStringArray("look_at_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.994688, 0)
 script = ExtResource("2_jdj2l")
-zoom_sensitivity = 4.0
-min_zoom = -15.0
-max_zoom = 200.0
+look_at_target = NodePath("../EMPTY")
 
-[node name="HorizontalPivot" type="Node3D" parent="CameraRig2"]
-
-[node name="VerticalPivot" type="Node3D" parent="CameraRig2/HorizontalPivot"]
-
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig2/HorizontalPivot/VerticalPivot"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.7, 32.900005, 1.0999999)
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig2"]
 shape = SubResource("SeparationRayShape3D_1fqqq")
 spring_length = 4.0
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig2/HorizontalPivot/VerticalPivot/SpringArm3D"]
-fov = 12.8
+[node name="Camera3D" type="Camera3D" parent="CameraRig2/SpringArm3D"]
+fov = 50.0
 
 [node name="TRNG_FROM_AUDIO" type="Node" parent="."]
 script = ExtResource("8_uusqb")
+
+[node name="EMPTY" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.56015, 0, 2.642922)
 
 [connection signal="mouse_entered" from="PROTOTYPE_DEVICE/BUTTON/StaticBody3D" to="PROTOTYPE_DEVICE/BUTTON" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="PROTOTYPE_DEVICE/BUTTON/StaticBody3D" to="PROTOTYPE_DEVICE/BUTTON" method="_on_static_body_3d_mouse_exited"]
