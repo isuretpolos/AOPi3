@@ -15,15 +15,17 @@ var panning_offset := Vector3.ZERO  # Store panning offset
 @onready var camera_rig:=$"."
 
 func _ready() -> void:
-	if look_at_target && zoom_at_target:
+	if look_at_target:
 		# Store the original target position
 		original_target_position = look_at_target.position
 
-		# Initialize orbit angles based on initial SpringArm position
+		# Initialize orbit angles based on initial camera rig position relative to the target
 		var initial_offset = camera_rig.position - look_at_target.position
+		current_distance = initial_offset.length()  # Set current distance to the initial distance
 		orbit_angles.y = atan2(initial_offset.x, initial_offset.z)  # yaw
 		orbit_angles.x = atan2(initial_offset.y, sqrt(initial_offset.x * initial_offset.x + initial_offset.z * initial_offset.z))  # pitch
-		# Position the SpringArm3D at the correct distance from the target
+
+		# Position the camera at the correct distance from the target
 		update_camera_position()
 
 func update_camera_position() -> void:
@@ -46,6 +48,8 @@ func update_camera_position() -> void:
 	camera_rig.look_at(current_target_position, Vector3.UP)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if get_viewport().is_input_handled():
+		return
 	# Check for panning: SHIFT + MMB
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_MIDDLE:
 		var shift_pressed = Input.is_key_pressed(KEY_SHIFT)

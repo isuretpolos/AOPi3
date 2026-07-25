@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://0gmsst203qth"]
+
+[ext_resource type="PackedScene" uid="uid://4cjs0tj0oce5" path="res://BLENDER/KNOB_Scale10.glb" id="1_dxcl3"]
+[ext_resource type="Script" uid="uid://tmivc4he2q68" path="res://SCRIPTS/knob_3d.gd" id="1_si87u"]
+[ext_resource type="PackedScene" uid="uid://cxsd5bw85ol0f" path="res://BLENDER/KNOB.glb" id="2_si87u"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uyvmi"]
+height = 1.3777466
+
+[node name="KNOB_3D" type="Node3D"]
+script = ExtResource("1_si87u")
+
+[node name="KNOB_Scale10" parent="." instance=ExtResource("1_dxcl3")]
+
+[node name="KNOB" parent="." instance=ExtResource("2_si87u")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="KNOB"]
+transform = Transform3D(-0.3746066, 0, -0.92718387, 0, 1, 0, 0.92718387, 0, -0.3746066, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KNOB/StaticBody3D"]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.7, 0.018273696, 0.7428218, -0.01697588)
+shape = SubResource("CylinderShape3D_uyvmi")
+
+[connection signal="mouse_entered" from="KNOB/StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="KNOB/StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]
+[connection signal="tree_entered" from="KNOB/StaticBody3D/CollisionShape3D" to="." method="_on_collision_shape_3d_tree_entered"]
