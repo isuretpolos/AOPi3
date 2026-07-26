@@ -20,10 +20,12 @@ func _ready() -> void:
 
 # We remember if the mouse entered the Knob
 func _on_static_body_3d_mouse_entered() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	mouse_inside = true
 
 # Or if it left the boundaries
 func _on_static_body_3d_mouse_exited() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	mouse_inside = false
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xdh82s3pxovt" path="res://BLENDER/Prototype.glb" id="1_1fqqq"]
 [ext_resource type="PackedScene" uid="uid://7h5025xah1xx" path="res://BLENDER/BACKGROUND.glb" id="1_4ukpf"]
 [ext_resource type="Script" uid="uid://bdcs1ywkehn4l" path="res://SCRIPTS/camera_rig.gd" id="2_jdj2l"]
-[ext_resource type="PackedScene" uid="uid://cifjslgdsdhpn" path="res://SCENES/button.tscn" id="2_yrw6j"]
-[ext_resource type="PackedScene" uid="uid://clsq7ivgfe5ne" path="res://SCENES/button_base.tscn" id="3_nihjc"]
+[ext_resource type="PackedScene" uid="uid://do7vwvktoiihd" path="res://SCENES/switch_metal.tscn" id="2_yrw6j"]
 [ext_resource type="PackedScene" uid="uid://0gmsst203qth" path="res://SCENES/knob_3d.tscn" id="6_uusqb"]
 [ext_resource type="Script" uid="uid://dk6p1a2078kum" path="res://SCRIPTS/trng_from_audio.gd" id="8_uusqb"]
 
@@ -35,26 +34,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12701368, 0)
 
 [node name="ButtonsControlPanel" type="Node" parent="PROTOTYPE_DEVICE" unique_id=1337624233]
 
-[node name="BUTTON" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1625907434 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 0.9953593, 0.09622795, 0, -0.09622795, 0.9953593, -2.8761442, 0, -4.8933625)
+[node name="SWITCH_METAL" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1517990184 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8342288, 0, -4.8529487)
 
-[node name="BUTTON2" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=558274032 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 0.9953593, 0.09622795, 0, -0.09622795, 0.9953593, -0.49127567, 0, -4.8933625)
-emission_color = Color(0.9800442, 0.00049901963, 0.924489, 1)
+[node name="SWITCH_METAL2" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1220601238 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6164477, 0, -4.8529487)
 
-[node name="BUTTON3" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=120967640 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 0.9953593, 0.09622795, 0, -0.09622795, 0.9953593, 1.8959124, 0, -4.8933625)
-emission_color = Color(0.8195238, 0, 0.10765775, 1)
-emission_energy = 100.0
+[node name="SWITCH_METAL3" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1862295674 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9778402, 0, -4.8529487)
 
-[node name="BUTTON_BASE" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1269587655 instance=ExtResource("3_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0.0014562905, 0, -0.0014562905, 0.999999, -2.874374, 0, -4.914873)
-
-[node name="BUTTON_BASE2" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=534121425 instance=ExtResource("3_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0.0014562905, 0, -0.0014562905, 0.999999, -0.48331952, 0, -4.914873)
-
-[node name="BUTTON_BASE3" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=693997148 instance=ExtResource("3_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0.0014562905, 0, -0.0014562905, 0.999999, 1.900763, 0, -4.914873)
+[node name="SWITCH_METAL4" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=66955424 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5865774, 0, -4.8529487)
 
 [node name="Prototype" parent="PROTOTYPE_DEVICE" unique_id=843102638 instance=ExtResource("1_1fqqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0.1)
