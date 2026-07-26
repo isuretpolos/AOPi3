@@ -1,6 +1,7 @@
 extends Node3D
 
 var clear:bool = false
+var ground:bool = false
 
 func _ready() -> void:
 	for switch in $PROTOTYPE_DEVICE/ButtonsControlPanel.get_children():
@@ -18,3 +19,6 @@ func _on_command_triggered(command_name: String) -> void:
 		"CLEAR":
 			clear = !clear
 			$PROTOTYPE_DEVICE/ButtonsControlPanel/CLEAR_LED.switch(clear)
+		"GROUND":
+			ground = !ground
+			$PROTOTYPE_DEVICE/ButtonsControlPanel/GROUND__LED.switch(ground)

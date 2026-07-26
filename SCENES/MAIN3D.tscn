@@ -48,6 +48,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61371756, 0, -3.9000003)
 emission_color = Color(0.88442177, 0.00032574893, 0.8144384, 1)
 emission_energy = 5.0
 
+[node name="GROUND__LED" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=780803209 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9698663, 0, -3.9000003)
+emission_color = Color(0.9693615, 0.6935297, 3.85046e-07, 1)
+emission_energy = 5.0
+
 [node name="POWER_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1517990184 instance=ExtResource("2_yrw6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8342288, 0, -4.8529487)
 command_name = "POWER"
