@@ -1,13 +1,14 @@
 extends Node3D
 
 @export var event_name := "ON/OFF"
-@export var rotation_off := 15.5
-@export var rotation_on := -15.5
+@export var rotation_off := -15.5
+@export var rotation_on := 15.5
 @export var switch_on := false
 @export var command_name := "TO_BE_DEFINED"
 
 var mouse_entered := false
 var switchSound = preload("res://AUDIO/switchMk12.mp3")
+signal command_triggered(command_name: String)
 
 func _ready() -> void:
 	$switchMetalHandle.rotation.x = deg_to_rad(rotation_off)
@@ -22,6 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				switch(false)
 			else:
 				switch(true)
+			command_triggered.emit(command_name)
 			
 
 func _on_static_body_3d_mouse_entered() -> void:

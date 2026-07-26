@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://qwl0m0kji5un"]
+
+[ext_resource type="PackedScene" uid="uid://c550yn3p14yhh" path="res://BLENDER/ledEmissionBody.glb" id="1_5pok7"]
+[ext_resource type="Script" uid="uid://1yuygof6hyiv" path="res://SCRIPTS/led.gd" id="1_u6rmh"]
+[ext_resource type="PackedScene" uid="uid://cxufm04a8j50y" path="res://BLENDER/ledPlasticBase.glb" id="2_u6rmh"]
+
+[node name="LED" type="Node3D" unique_id=1543973986]
+script = ExtResource("1_u6rmh")
+
+[node name="ledEmissionBody" parent="." unique_id=1609439335 instance=ExtResource("1_5pok7")]
+
+[node name="ledPlasticBase" parent="ledEmissionBody" unique_id=1432816179 instance=ExtResource("2_u6rmh")]
