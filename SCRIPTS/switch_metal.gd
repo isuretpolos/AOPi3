@@ -1,15 +1,23 @@
 extends Node3D
 
 @export var event_name := "ON/OFF"
-@export var rotation_off := -15.5
-@export var rotation_on := 15.5
+@export var rotation_off := 15.5
+@export var rotation_on := -15.5
 @export var switch_on := false
+@export var command_name := "TO_BE_DEFINED"
 
 var mouse_entered := false
+var switchSound = preload("res://AUDIO/switchMk12.mp3")
+
+func _ready() -> void:
+	$switchMetalHandle.rotation.x = deg_to_rad(rotation_off)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && mouse_entered:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			if !$AudioStreamPlayer3D.is_playing():
+				$AudioStreamPlayer3D.stream = switchSound
+				$AudioStreamPlayer3D.play()
 			if switch_on:
 				switch(false)
 			else:
@@ -30,3 +38,4 @@ func switch(state:bool):
 		$switchMetalHandle.rotation.x = deg_to_rad(rotation_on)
 	else:
 		$switchMetalHandle.rotation.x = deg_to_rad(rotation_off)
+		

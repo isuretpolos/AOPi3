@@ -34,17 +34,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12701368, 0)
 
 [node name="ButtonsControlPanel" type="Node" parent="PROTOTYPE_DEVICE" unique_id=1337624233]
 
-[node name="SWITCH_METAL" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1517990184 instance=ExtResource("2_yrw6j")]
+[node name="POWER_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1517990184 instance=ExtResource("2_yrw6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8342288, 0, -4.8529487)
+event_name = "ON/OFF"
+rotation_off = 15.5
+rotation_on = -15.5
+switch_on = false
+command_name = "POWER"
 
-[node name="SWITCH_METAL2" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1220601238 instance=ExtResource("2_yrw6j")]
+[node name="CLEAR_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1220601238 instance=ExtResource("2_yrw6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6164477, 0, -4.8529487)
+event_name = "ON/OFF"
+rotation_off = 15.5
+rotation_on = -15.5
+switch_on = false
+command_name = "CLEAR"
 
-[node name="SWITCH_METAL3" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1862295674 instance=ExtResource("2_yrw6j")]
+[node name="GROUND_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1862295674 instance=ExtResource("2_yrw6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9778402, 0, -4.8529487)
+event_name = "ON/OFF"
+rotation_off = 15.5
+rotation_on = -15.5
+switch_on = false
+command_name = "GROUND"
 
-[node name="SWITCH_METAL4" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=66955424 instance=ExtResource("2_yrw6j")]
+[node name="SUPER_CHARGE_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=66955424 instance=ExtResource("2_yrw6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5865774, 0, -4.8529487)
+event_name = "ON/OFF"
+rotation_off = 15.5
+rotation_on = -15.5
+switch_on = false
+command_name = "SUPER_CHARGE"
 
 [node name="Prototype" parent="PROTOTYPE_DEVICE" unique_id=843102638 instance=ExtResource("1_1fqqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0.1)

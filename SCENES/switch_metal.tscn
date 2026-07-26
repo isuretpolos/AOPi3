@@ -6,6 +6,8 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xrivr"]
 
+[sub_resource type="AudioStream" id="AudioStream_gdc4q"]
+
 [node name="SWITCH_METAL" type="Node3D" unique_id=1517990184]
 script = ExtResource("1_gdc4q")
 
@@ -20,6 +22,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15285951, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1202200749]
 transform = Transform3D(0.705, 0, 0, 0, 0.7, 0, 0, 0, 0.705, 0, 0.8407705, 0)
 shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1136571727]
+stream = SubResource("AudioStream_gdc4q")
 
 [connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]
