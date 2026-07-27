@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xdh82s3pxovt" path="res://BLENDER/Prototype.glb" id="1_1fqqq"]
 [ext_resource type="PackedScene" uid="uid://7h5025xah1xx" path="res://BLENDER/BACKGROUND.glb" id="1_4ukpf"]
-[ext_resource type="Script" uid="uid://bupmxl171v8ly" path="res://SCENES/main_3d.gd" id="1_uusqb"]
+[ext_resource type="Script" uid="uid://bupmxl171v8ly" path="res://SCRIPTS/main_3d.gd" id="1_uusqb"]
 [ext_resource type="Script" uid="uid://bdcs1ywkehn4l" path="res://SCRIPTS/camera_rig.gd" id="2_jdj2l"]
 [ext_resource type="PackedScene" uid="uid://do7vwvktoiihd" path="res://SCENES/switch_metal.tscn" id="2_yrw6j"]
 [ext_resource type="PackedScene" uid="uid://0gmsst203qth" path="res://SCENES/knob_3d.tscn" id="6_uusqb"]
@@ -82,14 +82,92 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0.1)
 
 [node name="Analysis" type="Node" parent="PROTOTYPE_DEVICE" unique_id=1175307562]
 
-[node name="KNOB_3D_1" parent="PROTOTYPE_DEVICE/Analysis" unique_id=542161204 instance=ExtResource("6_uusqb")]
+[node name="GV_KNOB" parent="PROTOTYPE_DEVICE/Analysis" unique_id=542161204 instance=ExtResource("6_uusqb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0764031, 0, 0)
 
-[node name="KNOB_3D_2" parent="PROTOTYPE_DEVICE/Analysis" unique_id=110723588 instance=ExtResource("6_uusqb")]
+[node name="OF_KNOB" parent="PROTOTYPE_DEVICE/Analysis" unique_id=110723588 instance=ExtResource("6_uusqb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91638446, 0, 0)
 
-[node name="KNOB_3D_3" parent="PROTOTYPE_DEVICE/Analysis" unique_id=514282738 instance=ExtResource("6_uusqb")]
+[node name="UF_KNOB" parent="PROTOTYPE_DEVICE/Analysis" unique_id=514282738 instance=ExtResource("6_uusqb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.835966, 0, 0)
+
+[node name="Rates" type="Node" parent="PROTOTYPE_DEVICE" unique_id=2144298897]
+
+[node name="R1_KNOB" parent="PROTOTYPE_DEVICE/Rates" unique_id=2102468052 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7061615, 0, -4.677636)
+
+[node name="R2_KNOB" parent="PROTOTYPE_DEVICE/Rates" unique_id=1857011971 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.698949, 0, -4.677636)
+
+[node name="R3_KNOB" parent="PROTOTYPE_DEVICE/Rates" unique_id=818470780 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.61853, 0, -4.677636)
+
+[node name="R3_KNOB4" parent="PROTOTYPE_DEVICE/Rates" unique_id=361480710 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.698177, 0, -4.677636)
+
+[node name="R3_KNOB5" parent="PROTOTYPE_DEVICE/Rates" unique_id=159392423 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, -4.677636)
+
+[node name="R1_KNOB2" parent="PROTOTYPE_DEVICE/Rates" unique_id=711711211 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7061615, 0, -0.010041356)
+
+[node name="R2_KNOB2" parent="PROTOTYPE_DEVICE/Rates" unique_id=1151311741 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.698949, 0, -0.010041356)
+
+[node name="R3_KNOB2" parent="PROTOTYPE_DEVICE/Rates" unique_id=141134434 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.61853, 0, -0.010041356)
+
+[node name="R3_KNOB6" parent="PROTOTYPE_DEVICE/Rates" unique_id=61988549 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.698177, 0, -0.034945488)
+
+[node name="R3_KNOB7" parent="PROTOTYPE_DEVICE/Rates" unique_id=297747325 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, -0.034945488)
+
+[node name="R1_KNOB3" parent="PROTOTYPE_DEVICE/Rates" unique_id=604894915 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7061615, 0, 4.792117)
+
+[node name="R2_KNOB3" parent="PROTOTYPE_DEVICE/Rates" unique_id=1472252174 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.698949, 0, 4.792117)
+
+[node name="R3_KNOB3" parent="PROTOTYPE_DEVICE/Rates" unique_id=962640202 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.61853, 0, 4.792117)
+
+[node name="R3_KNOB8" parent="PROTOTYPE_DEVICE/Rates" unique_id=2003177797 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.698177, 0, 4.7505746)
+
+[node name="R3_KNOB9" parent="PROTOTYPE_DEVICE/Rates" unique_id=222599292 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, 4.7505746)
+
+[node name="Broadcast_Panel" type="Node" parent="PROTOTYPE_DEVICE" unique_id=427459249]
+
+[node name="BROADCAST_SWITCH" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=949651801 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.439221, 0, 4.5471606)
+command_name = "BROADCAST"
+
+[node name="BROADCAST_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=1035615526 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742028, 0, 4.5535297)
+emission_color = Color(0.3423224, 0.7174665, 0, 1)
+emission_energy = 10.0
+
+[node name="R_TOUCH_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=168659180 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 3.7643013)
+emission_color = Color(0.99851984, 0, 0.124860756, 1)
+emission_energy = 5.0
+
+[node name="R_HIT_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=280092811 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 4.558302)
+emission_color = Color(0.99851984, 0, 0.124860756, 1)
+emission_energy = 5.0
+
+[node name="R_SUPER_HIT_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=3591286 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 5.3192167)
+emission_color = Color(0.99851984, 0, 0.124860756, 1)
+emission_energy = 5.0
+
+[node name="R_ANOMALIE_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=99564188 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 6.0691066)
+emission_color = Color(0.99851984, 0, 0.124860756, 1)
+emission_energy = 5.0
 
 [node name="WORLD" type="Node" parent="." unique_id=693408457]
 

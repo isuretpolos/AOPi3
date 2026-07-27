@@ -18,12 +18,10 @@ func _ready():
 	_on_power_state(global.power) # initialize LED immediately
 		
 func switch(state:bool):
-	print(name + " switched and now own state is " + str(state))
 	led_state = state
 	led_material.emission_enabled = state && global.power
 
 func _on_power_state(state: bool) -> void:
-	print(name + ", device power is " + str(state) + " and own state is " + str(led_state))
 	if state:
 		turn_on()
 	else:
