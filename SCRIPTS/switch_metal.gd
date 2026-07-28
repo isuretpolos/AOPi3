@@ -19,15 +19,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				$AudioStreamPlayer3D.stream = switchSound
 				$AudioStreamPlayer3D.play()
 			if switch_on:
-				print(name + " off")
 				switch(false)
 			else:
-				print(name + " on")
 				switch(true)
-			print("... trying to emit the command " + command_name)
 			command_triggered.emit(command_name)
-			print("after emit")
-			
+		
 
 func _on_static_body_3d_mouse_entered() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)

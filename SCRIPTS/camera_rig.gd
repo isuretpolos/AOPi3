@@ -65,7 +65,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	# Pan the camera like Blender: SHIFT + MMB
 	if event is InputEventMouseMotion and is_panning and look_at_target:
-		print("panning")
 		# Calculate panning direction based on camera orientation
 		# Get the camera's right and up vectors from its transform
 		var camera_right = camera_rig.transform.basis.x
