@@ -97,33 +97,33 @@ func _on_command_triggered(command_name: String) -> void:
 	match command_name:
 		"POWER":
 			global.switch_power()
-			$PROTOTYPE_DEVICE/ButtonsControlPanel/POWER_LED.switch(global.power)
+			$PROTOTYPE_DEVICE/PANEL_CONTROL/POWER_LED.switch(global.power)
 			set_knob_scales(global.power)
 			set_texts(global.power)
 			if !global.power:
-				$PROTOTYPE_DEVICE/ButtonsControlPanel/AudioStreamPlayer3D.stop()
+				$PROTOTYPE_DEVICE/PANEL_CONTROL/AudioStreamPlayer3D.stop()
 			chargeCapacitor()
 		"CLEAR":
 			global.clear = !global.clear
-			$PROTOTYPE_DEVICE/ButtonsControlPanel/CLEAR_LED.switch(global.clear)
+			$PROTOTYPE_DEVICE/PANEL_CONTROL/CLEAR_LED.switch(global.clear)
 		"GROUND":
 			global.ground = !global.ground
-			$PROTOTYPE_DEVICE/ButtonsControlPanel/GROUND_LED.switch(global.ground)
+			$PROTOTYPE_DEVICE/PANEL_CONTROL/GROUND_LED.switch(global.ground)
 		"SUPER_CHARGE":
 			global.super_charge = !global.super_charge
-			$PROTOTYPE_DEVICE/ButtonsControlPanel/SUPERCHARGE_LED.switch(global.super_charge)
+			$PROTOTYPE_DEVICE/PANEL_CONTROL/SUPERCHARGE_LED.switch(global.super_charge)
 			chargeCapacitor()
 		"ANALYSIS":
 			global.analysis = !global.analysis
-			$PROTOTYPE_DEVICE/Broadcast_Panel/ANALYSIS_LED.switch(global.analysis)
+			$PROTOTYPE_DEVICE/PANEL_BROADCAST/ANALYSIS_LED.switch(global.analysis)
 		"BROADCAST":
 			global.broadcasting = !global.broadcasting
-			$PROTOTYPE_DEVICE/Broadcast_Panel/BROADCAST_LED.switch(global.broadcasting)
+			$PROTOTYPE_DEVICE/PANEL_BROADCAST/BROADCAST_LED.switch(global.broadcasting)
 
 func chargeCapacitor() -> void:
 	if global.power && global.super_charge:
-		if !$PROTOTYPE_DEVICE/ButtonsControlPanel/AudioStreamPlayer3D.is_playing():
-			$PROTOTYPE_DEVICE/ButtonsControlPanel/AudioStreamPlayer3D.stream = capacitorLoad
-			$PROTOTYPE_DEVICE/ButtonsControlPanel/AudioStreamPlayer3D.play()
+		if !$PROTOTYPE_DEVICE/PANEL_CONTROL/AudioStreamPlayer3D.is_playing():
+			$PROTOTYPE_DEVICE/PANEL_CONTROL/AudioStreamPlayer3D.stream = capacitorLoad
+			$PROTOTYPE_DEVICE/PANEL_CONTROL/AudioStreamPlayer3D.play()
 	if !global.super_charge:
-		$PROTOTYPE_DEVICE/ButtonsControlPanel/AudioStreamPlayer3D.stop()
+		$PROTOTYPE_DEVICE/PANEL_CONTROL/AudioStreamPlayer3D.stop()

@@ -20,7 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15285951, 0)
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=582435184]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1202200749]
-transform = Transform3D(0.705, 0, 0, 0, 0.7, 0, 0, 0, 0.705, 0, 0.8407705, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.40575466, 0)
 shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1136571727]

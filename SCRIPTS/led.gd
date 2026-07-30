@@ -4,10 +4,11 @@ extends Node3D
 @export var emission_color := Color(1, 1, 1)
 @export var emission_energy := 1.0
 
-@onready var led_mesh: MeshInstance3D = $ledEmissionBody/Sphere
+@onready var led_mesh: MeshInstance3D = $ledEmissionBody/LEDbody
 var led_material: StandardMaterial3D
 
 func _ready():
+	print($ledEmissionBody.get_tree_string_pretty())
 	led_material = led_mesh.get_active_material(0).duplicate()
 	led_mesh.set_surface_override_material(0, led_material)
 	if led_material is StandardMaterial3D:

@@ -15,12 +15,13 @@ reverse_value = true
 [node name="KNOB_Scale10" parent="." unique_id=222039017 instance=ExtResource("1_dxcl3")]
 
 [node name="KNOB" parent="." unique_id=1399983679 instance=ExtResource("2_si87u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31035757, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="KNOB" unique_id=715832164]
 transform = Transform3D(-0.3746066, 0, -0.92718387, 0, 1, 0, 0.92718387, 0, -0.3746066, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KNOB/StaticBody3D" unique_id=234125016]
-transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.7, 0.018273696, 0.7428218, -0.01697588)
+transform = Transform3D(0.70000005, 0, 1.4901161e-08, 0, 0.29, 0, -1.4901161e-08, 0, 0.70000005, 0.018273696, -0.08964816, -0.01697588)
 shape = SubResource("CylinderShape3D_uyvmi")
 
 [connection signal="mouse_entered" from="KNOB/StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]

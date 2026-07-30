@@ -37,146 +37,147 @@ script = ExtResource("1_uusqb")
 label_emission_power = 3.445
 
 [node name="PROTOTYPE_DEVICE" type="Node3D" parent="." unique_id=1920784777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.329425, 0.86039567, 0)
 
-[node name="ButtonsControlPanel" type="Node" parent="PROTOTYPE_DEVICE" unique_id=1337624233]
+[node name="PANEL_CONTROL" type="Node3D" parent="PROTOTYPE_DEVICE" unique_id=819892239]
 
-[node name="POWER_LED" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1543973986 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, -3.9000003)
+[node name="POWER_LED" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=1543973986 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17509937, 0.22121781, -0.76770556)
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
 
-[node name="CLEAR_LED" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=2108598846 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61371756, 0, -3.9000003)
+[node name="CLEAR_LED" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=2108598846 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91537666, 0.22121781, -0.78609633)
 emission_color = Color(0.88442177, 0.00032574893, 0.8144384, 1)
 emission_energy = 5.0
 
-[node name="GROUND_LED" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=780803209 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9698663, 0, -3.9000003)
+[node name="GROUND_LED" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=780803209 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6366658, 0.22121781, -0.7750576)
 emission_color = Color(0.9693615, 0.6935297, 3.85046e-07, 1)
 emission_energy = 5.0
 
-[node name="SUPERCHARGE_LED" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1605639236 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5938745, 0, -6.1124)
+[node name="SUPERCHARGE_LED" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=1605639236 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3972151, 0.22121781, -0.76901674)
 emission_color = Color(0.68909824, 0, 0.055646576, 1)
 emission_energy = 10.0
 
-[node name="POWER_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1517990184 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8342288, 0, -4.8529487)
+[node name="POWER_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=1517990184 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17616343, 0.09490234, -1.2124)
 command_name = "POWER"
 
-[node name="CLEAR_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1220601238 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6164477, 0, -4.8529487)
+[node name="CLEAR_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=1220601238 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9078289, 0.09490234, -1.2253425)
 command_name = "CLEAR"
 
-[node name="GROUND_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=1862295674 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9778402, 0, -4.8529487)
+[node name="GROUND_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=1862295674 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6372182, 0.09490234, -1.2253428)
 command_name = "GROUND"
 
-[node name="SUPER_CHARGE_SWITCH" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=66955424 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5865774, 0, -4.8529487)
+[node name="SUPER_CHARGE_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=66955424 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3939152, 0.09490234, -1.2381796)
 command_name = "SUPER_CHARGE"
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PROTOTYPE_DEVICE/ButtonsControlPanel" unique_id=332113282]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PROTOTYPE_DEVICE/PANEL_CONTROL" unique_id=332113282]
 doppler_tracking = 2
 
 [node name="Prototype" parent="PROTOTYPE_DEVICE" unique_id=843102638 instance=ExtResource("1_1fqqq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0.1)
 
-[node name="Analysis" type="Node" parent="PROTOTYPE_DEVICE" unique_id=1175307562]
+[node name="PANEL_ANALYSIS" type="Node3D" parent="PROTOTYPE_DEVICE" unique_id=2141986832]
 
-[node name="GV_KNOB" parent="PROTOTYPE_DEVICE/Analysis" unique_id=542161204 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0764031, 0, 0)
+[node name="GV_KNOB" parent="PROTOTYPE_DEVICE/PANEL_ANALYSIS" unique_id=542161204 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11475992, 0.20940578, 0.6866073)
 
-[node name="OF_KNOB" parent="PROTOTYPE_DEVICE/Analysis" unique_id=110723588 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91638446, 0, 0)
+[node name="OF_KNOB" parent="PROTOTYPE_DEVICE/PANEL_ANALYSIS" unique_id=110723588 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3416126, 0.20940578, 0.6905084)
 
-[node name="UF_KNOB" parent="PROTOTYPE_DEVICE/Analysis" unique_id=514282738 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.835966, 0, 0)
+[node name="UF_KNOB" parent="PROTOTYPE_DEVICE/PANEL_ANALYSIS" unique_id=514282738 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5225673, 0.20940578, 0.68660736)
 
-[node name="Rates" type="Node" parent="PROTOTYPE_DEVICE" unique_id=2144298897]
+[node name="RATES" type="Node3D" parent="PROTOTYPE_DEVICE" unique_id=1335036674]
 
-[node name="R1_KNOB" parent="PROTOTYPE_DEVICE/Rates" unique_id=2102468052 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7061615, 0, -4.677636)
+[node name="R1_KNOB" parent="PROTOTYPE_DEVICE/RATES" unique_id=2102468052 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8274937, 0.20940578, -0.56249493)
 
-[node name="R2_KNOB" parent="PROTOTYPE_DEVICE/Rates" unique_id=1857011971 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.698949, 0, -4.677636)
+[node name="R2_KNOB" parent="PROTOTYPE_DEVICE/RATES" unique_id=1857011971 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9500484, 0.20940578, -0.56249493)
 
-[node name="R3_KNOB" parent="PROTOTYPE_DEVICE/Rates" unique_id=818470780 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.61853, 0, -4.677636)
+[node name="R3_KNOB" parent="PROTOTYPE_DEVICE/RATES" unique_id=818470780 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1123786, 0.20940578, -0.56249493)
 
-[node name="R3_KNOB4" parent="PROTOTYPE_DEVICE/Rates" unique_id=361480710 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.698177, 0, -4.677636)
+[node name="R4_KNOB" parent="PROTOTYPE_DEVICE/RATES" unique_id=361480710 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.276, 0.20940578, -0.56249493)
 
-[node name="R3_KNOB5" parent="PROTOTYPE_DEVICE/Rates" unique_id=159392423 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, -4.677636)
+[node name="R5_KNOB" parent="PROTOTYPE_DEVICE/RATES" unique_id=159392423 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.438758, 0.20940578, -0.56249493)
 
-[node name="R1_KNOB2" parent="PROTOTYPE_DEVICE/Rates" unique_id=711711211 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7061615, 0, -0.010041356)
+[node name="R1_KNOB2" parent="PROTOTYPE_DEVICE/RATES" unique_id=711711211 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8274937, 0.20940578, 0.68503153)
 
-[node name="R2_KNOB2" parent="PROTOTYPE_DEVICE/Rates" unique_id=1151311741 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.698949, 0, -0.010041356)
+[node name="R2_KNOB2" parent="PROTOTYPE_DEVICE/RATES" unique_id=1151311741 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9500484, 0.20940578, 0.68503153)
 
-[node name="R3_KNOB2" parent="PROTOTYPE_DEVICE/Rates" unique_id=141134434 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.61853, 0, -0.010041356)
+[node name="R3_KNOB2" parent="PROTOTYPE_DEVICE/RATES" unique_id=141134434 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1123786, 0.20940578, 0.68503153)
 
-[node name="R3_KNOB6" parent="PROTOTYPE_DEVICE/Rates" unique_id=61988549 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.698177, 0, -0.034945488)
+[node name="R4_KNOB2" parent="PROTOTYPE_DEVICE/RATES" unique_id=61988549 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.276, 0.20940578, 0.6601274)
 
-[node name="R3_KNOB7" parent="PROTOTYPE_DEVICE/Rates" unique_id=297747325 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, -0.034945488)
+[node name="R5_KNOB2" parent="PROTOTYPE_DEVICE/RATES" unique_id=297747325 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.438758, 0.20940578, 0.6601274)
 
-[node name="R1_KNOB3" parent="PROTOTYPE_DEVICE/Rates" unique_id=604894915 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7061615, 0, 4.792117)
+[node name="R1_KNOB3" parent="PROTOTYPE_DEVICE/RATES" unique_id=604894915 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8274937, 0.20940578, 1.9334118)
 
-[node name="R2_KNOB3" parent="PROTOTYPE_DEVICE/Rates" unique_id=1472252174 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.698949, 0, 4.792117)
+[node name="R2_KNOB3" parent="PROTOTYPE_DEVICE/RATES" unique_id=1472252174 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9500484, 0.20940578, 1.9334118)
 
-[node name="R3_KNOB3" parent="PROTOTYPE_DEVICE/Rates" unique_id=962640202 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.61853, 0, 4.792117)
+[node name="R3_KNOB3" parent="PROTOTYPE_DEVICE/RATES" unique_id=962640202 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1123786, 0.20940578, 1.9334118)
 
-[node name="R3_KNOB8" parent="PROTOTYPE_DEVICE/Rates" unique_id=2003177797 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.698177, 0, 4.7505746)
+[node name="R4_KNOB4" parent="PROTOTYPE_DEVICE/RATES" unique_id=2003177797 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.276, 0.20940578, 1.8918693)
 
-[node name="R3_KNOB9" parent="PROTOTYPE_DEVICE/Rates" unique_id=222599292 instance=ExtResource("6_uusqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, 4.7505746)
+[node name="R5_KNOB5" parent="PROTOTYPE_DEVICE/RATES" unique_id=222599292 instance=ExtResource("6_uusqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.438758, 0.20940578, 1.8918693)
 
-[node name="Broadcast_Panel" type="Node" parent="PROTOTYPE_DEVICE" unique_id=427459249]
+[node name="PANEL_BROADCAST" type="Node3D" parent="PROTOTYPE_DEVICE" unique_id=426699336]
 
-[node name="BROADCAST_SWITCH" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=949651801 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.439221, 0, 5.7690234)
+[node name="BROADCAST_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=949651801 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3346064, 0.09490234, 2.4133904)
 command_name = "BROADCAST"
 
-[node name="BROADCAST_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=1035615526 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742028, 0, 5.7753925)
+[node name="BROADCAST_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=1035615526 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6642766, 0.22121781, 2.4123628)
 emission_color = Color(0.3423224, 0.7174665, 0, 1)
 emission_energy = 10.0
 
-[node name="R_TOUCH_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=168659180 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 3.7643013)
+[node name="R_TOUCH_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=168659180 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 1.8006504)
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
 
-[node name="R_HIT_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=280092811 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 4.558302)
+[node name="R_HIT_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=280092811 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 2.0343986)
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
 
-[node name="R_SUPER_HIT_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=3591286 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 5.3192167)
+[node name="R_SUPER_HIT_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=3591286 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 2.2731364)
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
 
-[node name="R_ANOMALIE_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=99564188 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 6.0691066)
+[node name="R_ANOMALIE_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=99564188 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 2.49541)
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
 
-[node name="ANALYSIS_SWITCH" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=332009610 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.439221, 0, 3.3606982)
+[node name="ANALYSIS_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=332009610 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33120203, 0.09490234, 1.7455616)
 command_name = "ANALYSIS"
 
-[node name="ANALYSIS_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=1659125701 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742028, 0, 3.3670673)
+[node name="ANALYSIS_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=1659125701 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65298975, 0.22121781, 1.7407067)
 emission_energy = 5.0
 
 [node name="WORLD" type="Node" parent="." unique_id=693408457]
@@ -214,8 +215,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8758974, 0, -2.7013083)
 [node name="table" parent="." unique_id=801999851 instance=ExtResource("7_4ukpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.128532, 0, -0.69826317)
 
-[node name="Lamp" parent="table" unique_id=409656912 instance=ExtResource("9_wgrhr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.548374, -4.1623077, -56.16031)
+[node name="Lamp" parent="." unique_id=409656912 instance=ExtResource("9_wgrhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0602617, 0.049743533, -10.269798)
 
-[node name="RadionicsHandbook" parent="table" unique_id=754575280 instance=ExtResource("9_4ukpf")]
-transform = Transform3D(-1.4914107, -0.16029233, 7.0066104e-09, 2.3862172e-15, -6.5567086e-08, -1.5000002, 0.16029233, -1.4914107, 6.519166e-08, 7.8644867, -8.132225, -20.268127)
+[node name="RadionicsHandbook" parent="." unique_id=754575280 instance=ExtResource("9_4ukpf")]
+transform = Transform3D(-1.4911703, -0.16026647, 0.026932295, -0.026778068, -0.002878091, -1.4997586, 0.16029231, -1.4914107, 6.5191664e-08, 18.99302, 0.5435522, -9.276266)
