@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bvj2uh777nkeo" path="res://BLENDER/table.glb" id="7_4ukpf"]
 [ext_resource type="PackedScene" uid="uid://qwl0m0kji5un" path="res://SCENES/led.tscn" id="7_nihjc"]
 [ext_resource type="Script" uid="uid://dk6p1a2078kum" path="res://SCRIPTS/trng_from_audio.gd" id="8_uusqb"]
+[ext_resource type="PackedScene" uid="uid://dexa1su4w2bfv" path="res://BLENDER/RadionicsHandbook.glb" id="9_4ukpf"]
+[ext_resource type="PackedScene" uid="uid://driacuap3ysww" path="res://BLENDER/Lamp.glb" id="9_wgrhr"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_nihjc"]
 
@@ -141,11 +143,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.699953, 0, 4.7505746)
 [node name="Broadcast_Panel" type="Node" parent="PROTOTYPE_DEVICE" unique_id=427459249]
 
 [node name="BROADCAST_SWITCH" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=949651801 instance=ExtResource("2_yrw6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.439221, 0, 4.5471606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.439221, 0, 5.7690234)
 command_name = "BROADCAST"
 
 [node name="BROADCAST_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=1035615526 instance=ExtResource("7_nihjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742028, 0, 4.5535297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742028, 0, 5.7753925)
 emission_color = Color(0.3423224, 0.7174665, 0, 1)
 emission_energy = 10.0
 
@@ -167,6 +169,14 @@ emission_energy = 5.0
 [node name="R_ANOMALIE_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=99564188 instance=ExtResource("7_nihjc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9191356, 0, 6.0691066)
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
+emission_energy = 5.0
+
+[node name="ANALYSIS_SWITCH" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=332009610 instance=ExtResource("2_yrw6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.439221, 0, 3.3606982)
+command_name = "ANALYSIS"
+
+[node name="ANALYSIS_LED" parent="PROTOTYPE_DEVICE/Broadcast_Panel" unique_id=1659125701 instance=ExtResource("7_nihjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7742028, 0, 3.3670673)
 emission_energy = 5.0
 
 [node name="WORLD" type="Node" parent="." unique_id=693408457]
@@ -203,3 +213,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8758974, 0, -2.7013083)
 
 [node name="table" parent="." unique_id=801999851 instance=ExtResource("7_4ukpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.128532, 0, -0.69826317)
+
+[node name="Lamp" parent="table" unique_id=409656912 instance=ExtResource("9_wgrhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.548374, -4.1623077, -56.16031)
+
+[node name="RadionicsHandbook" parent="table" unique_id=754575280 instance=ExtResource("9_4ukpf")]
+transform = Transform3D(-1.4914107, -0.16029233, 7.0066104e-09, 2.3862172e-15, -6.5567086e-08, -1.5000002, 0.16029233, -1.4914107, 6.519166e-08, 7.8644867, -8.132225, -20.268127)

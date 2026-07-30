@@ -113,6 +113,9 @@ func _on_command_triggered(command_name: String) -> void:
 			global.super_charge = !global.super_charge
 			$PROTOTYPE_DEVICE/ButtonsControlPanel/SUPERCHARGE_LED.switch(global.super_charge)
 			chargeCapacitor()
+		"ANALYSIS":
+			global.analysis = !global.analysis
+			$PROTOTYPE_DEVICE/Broadcast_Panel/ANALYSIS_LED.switch(global.analysis)
 		"BROADCAST":
 			global.broadcasting = !global.broadcasting
 			$PROTOTYPE_DEVICE/Broadcast_Panel/BROADCAST_LED.switch(global.broadcasting)
