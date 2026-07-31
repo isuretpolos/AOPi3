@@ -218,11 +218,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.128532, 0, -0.69826317)
 [node name="Lamp" parent="." unique_id=409656912 instance=ExtResource("9_wgrhr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0602617, 0.049743533, -10.269798)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lamp" unique_id=803241340]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.6067357, 0)
-light_color = Color(0.99999946, 0.9888361, 0.8441317, 1)
-shadow_enabled = true
-omni_range = 22.11
-
 [node name="RadionicsHandbook" parent="." unique_id=754575280 instance=ExtResource("9_4ukpf")]
 transform = Transform3D(-1.4911703, -0.16026647, 0.026932295, -0.026778068, -0.002878091, -1.4997586, 0.16029231, -1.4914107, 6.5191664e-08, 18.99302, 0.5435522, -9.276266)
