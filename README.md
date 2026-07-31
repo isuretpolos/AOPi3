@@ -1,6 +1,6 @@
 # AOPi3
 Third Generation Open Source Radionics
 
-![prototype](IMAGES/prototype.png)
+![prototype](GODOT/IMAGES/prototype.png)
 
 Work in progress
