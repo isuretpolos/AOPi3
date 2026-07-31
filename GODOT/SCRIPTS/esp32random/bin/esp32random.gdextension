@@ -1,0 +1,12 @@
+[configuration]
+entry_symbol = "esp32_random_library_init"
+compatibility_minimum = 4.1
+reloadable = true
+
+[libraries]
+linux.debug.x86_64 = "res://SCRIPTS/esp32random/bin/libesp32random.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://SCRIPTS/esp32random/bin/libesp32random.linux.template_release.x86_64.so"
+windows.debug.x86_64 = "res://SCRIPTS/esp32random/bin/libesp32random.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://SCRIPTS/esp32random/bin/libesp32random.windows.template_release.x86_64.dll"
+macos.debug = "res://SCRIPTS/esp32random/bin/libesp32random.macos.template_debug.framework"
+macos.release = "res://SCRIPTS/esp32random/bin/libesp32random.macos.template_release.framework"
