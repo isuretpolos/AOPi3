@@ -5,13 +5,10 @@ var capacitorLoad = preload("res://AUDIO/capacitor_slow_fine.wav")
 var illuminated_materials: Dictionary = {}
 
 func _ready() -> void:
-	print($PROTOTYPE_DEVICE.get_tree_string_pretty())
 	connect_switches($PROTOTYPE_DEVICE)
 	prepare_illuminated_objects($PROTOTYPE_DEVICE)
-
 	# Anfangszustand
 	set_all_illumination(false)
-
 
 func prepare_illuminated_objects(node: Node) -> void:
 	for child in node.get_children():
@@ -118,6 +115,10 @@ func _on_command_triggered(command_name: String) -> void:
 			$PROTOTYPE_DEVICE/PANEL_BROADCAST/ANALYSIS_LED.switch(global.analysis)
 		"BROADCAST":
 			global.broadcasting = !global.broadcasting
+			if global.broadcasting:
+				$PROTOTYPE_DEVICE._on_button_pressed()
+			else:
+				$PROTOTYPE_DEVICE.stop_collecting()
 			$PROTOTYPE_DEVICE/PANEL_BROADCAST/BROADCAST_LED.switch(global.broadcasting)
 
 func chargeCapacitor() -> void:

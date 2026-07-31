@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://xdh82s3pxovt" path="res://BLENDER/Prototype.glb" id="1_1fqqq"]
 [ext_resource type="Script" uid="uid://bupmxl171v8ly" path="res://SCRIPTS/main_3d.gd" id="1_uusqb"]
 [ext_resource type="Script" uid="uid://bdcs1ywkehn4l" path="res://SCRIPTS/camera_rig.gd" id="2_jdj2l"]
+[ext_resource type="Script" uid="uid://d4dhjfg1ls4au" path="res://SCRIPTS/radionics.gd" id="2_wi0gc"]
 [ext_resource type="PackedScene" uid="uid://do7vwvktoiihd" path="res://SCENES/switch_metal.tscn" id="2_yrw6j"]
 [ext_resource type="PackedScene" uid="uid://0gmsst203qth" path="res://SCENES/knob_3d.tscn" id="6_uusqb"]
 [ext_resource type="PackedScene" uid="uid://bvj2uh777nkeo" path="res://BLENDER/table.glb" id="7_4ukpf"]
 [ext_resource type="PackedScene" uid="uid://qwl0m0kji5un" path="res://SCENES/led.tscn" id="7_nihjc"]
-[ext_resource type="Script" uid="uid://dk6p1a2078kum" path="res://SCRIPTS/trng_from_audio.gd" id="8_uusqb"]
 [ext_resource type="PackedScene" uid="uid://dexa1su4w2bfv" path="res://BLENDER/RadionicsHandbook.glb" id="9_4ukpf"]
 [ext_resource type="PackedScene" uid="uid://driacuap3ysww" path="res://BLENDER/Lamp.glb" id="9_wgrhr"]
 
@@ -38,6 +38,12 @@ label_emission_power = 3.445
 
 [node name="PROTOTYPE_DEVICE" type="Node3D" parent="." unique_id=1920784777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.329425, 0.86039567, 0)
+script = ExtResource("2_wi0gc")
+threshold_touch = 99000
+threshold_hit = 99900
+threshold_super_hit = 99990
+threshold_anomalie = 99995
+next_round_fired = 0.07
 
 [node name="PANEL_CONTROL" type="Node3D" parent="PROTOTYPE_DEVICE" unique_id=819892239]
 
@@ -152,25 +158,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6642766, 0.22121781, 2.4123
 emission_color = Color(0.3423224, 0.7174665, 0, 1)
 emission_energy = 10.0
 
-[node name="R_TOUCH_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=168659180 instance=ExtResource("7_nihjc")]
+[node name="R_TOUCH_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=168659180 node_paths=PackedStringArray("collector") instance=ExtResource("7_nihjc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 1.8006504)
+collector = NodePath("../..")
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
+signal_name = "touch"
 
-[node name="R_HIT_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=280092811 instance=ExtResource("7_nihjc")]
+[node name="R_HIT_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=280092811 node_paths=PackedStringArray("collector") instance=ExtResource("7_nihjc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 2.0343986)
+collector = NodePath("../..")
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
+signal_name = "hit"
 
-[node name="R_SUPER_HIT_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=3591286 instance=ExtResource("7_nihjc")]
+[node name="R_SUPER_HIT_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=3591286 node_paths=PackedStringArray("collector") instance=ExtResource("7_nihjc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 2.2731364)
+collector = NodePath("../..")
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
+signal_name = "super_hit"
 
-[node name="R_ANOMALIE_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=99564188 instance=ExtResource("7_nihjc")]
+[node name="R_ANOMALIE_LED" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=99564188 node_paths=PackedStringArray("collector") instance=ExtResource("7_nihjc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0360813, 0.22121781, 2.49541)
+collector = NodePath("../..")
 emission_color = Color(0.99851984, 0, 0.124860756, 1)
 emission_energy = 5.0
+signal_name = "anomalie"
 
 [node name="ANALYSIS_SWITCH" parent="PROTOTYPE_DEVICE/PANEL_BROADCAST" unique_id=332009610 instance=ExtResource("2_yrw6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33120203, 0.09490234, 1.7455616)
@@ -207,7 +221,6 @@ spring_length = 4.0
 fov = 50.0
 
 [node name="TRNG_FROM_AUDIO" type="Node" parent="." unique_id=1085690444]
-script = ExtResource("8_uusqb")
 
 [node name="EMPTY" type="Node3D" parent="." unique_id=1538300743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8758974, 0, -2.7013083)
