@@ -99,6 +99,7 @@ func _on_command_triggered(command_name: String) -> void:
 			set_texts(global.power)
 			if !global.power:
 				$PROTOTYPE_DEVICE/PANEL_CONTROL/AudioStreamPlayer3D.stop()
+			broadcast()
 			chargeCapacitor()
 		"CLEAR":
 			global.clear = !global.clear
@@ -115,11 +116,14 @@ func _on_command_triggered(command_name: String) -> void:
 			$PROTOTYPE_DEVICE/PANEL_BROADCAST/ANALYSIS_LED.switch(global.analysis)
 		"BROADCAST":
 			global.broadcasting = !global.broadcasting
-			if global.broadcasting:
-				$PROTOTYPE_DEVICE._on_button_pressed()
-			else:
-				$PROTOTYPE_DEVICE.stop_collecting()
+			broadcast()
 			$PROTOTYPE_DEVICE/PANEL_BROADCAST/BROADCAST_LED.switch(global.broadcasting)
+
+func broadcast() -> void:
+	if global.power && global.broadcasting:
+		$PROTOTYPE_DEVICE._on_button_pressed()
+	else:
+		$PROTOTYPE_DEVICE.stop_collecting()
 
 func chargeCapacitor() -> void:
 	if global.power && global.super_charge:

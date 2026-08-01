@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://qwl0m0kji5un" path="res://SCENES/led.tscn" id="7_nihjc"]
 [ext_resource type="PackedScene" uid="uid://dexa1su4w2bfv" path="res://BLENDER/RadionicsHandbook.glb" id="9_4ukpf"]
 [ext_resource type="PackedScene" uid="uid://driacuap3ysww" path="res://BLENDER/Lamp.glb" id="9_wgrhr"]
+[ext_resource type="PackedScene" uid="uid://bhidgrjibmq0w" path="res://SCENES/shader.tscn" id="11_rbqqe"]
+[ext_resource type="PackedScene" uid="uid://d240ne0ptjice" path="res://BLENDER/House.glb" id="11_wi0gc"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_nihjc"]
 
@@ -207,11 +209,15 @@ compositor = SubResource("Compositor_nihjc")
 transform = Transform3D(-0.5787303, -0.4122259, 0.7036626, -0.05295572, 0.88001484, 0.47198454, -0.8137977, 0.23588878, -0.531121, -28.493607, 3.1000001, 0)
 light_energy = 1.049
 shadow_enabled = true
+shadow_bias = 0.05
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 327.3
 
 [node name="CameraRig2" type="Node3D" parent="." unique_id=1191100324 node_paths=PackedStringArray("look_at_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.276627, 7.003477, 10.021561)
 script = ExtResource("2_jdj2l")
 look_at_target = NodePath("../PROTOTYPE_DEVICE")
+max_zoom_distance = 50.0
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraRig2" unique_id=1378745030]
 shape = SubResource("SeparationRayShape3D_1fqqq")
@@ -219,8 +225,6 @@ spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig2/SpringArm3D" unique_id=1075932719]
 fov = 50.0
-
-[node name="TRNG_FROM_AUDIO" type="Node" parent="." unique_id=1085690444]
 
 [node name="EMPTY" type="Node3D" parent="." unique_id=1538300743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8758974, 0, -2.7013083)
@@ -233,3 +237,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0602617, 0.049743533, -10.2
 
 [node name="RadionicsHandbook" parent="." unique_id=754575280 instance=ExtResource("9_4ukpf")]
 transform = Transform3D(-1.4911703, -0.16026647, 0.026932295, -0.026778068, -0.002878091, -1.4997586, 0.16029231, -1.4914107, 6.5191664e-08, 18.99302, 0.5435522, -9.276266)
+
+[node name="HOUSE" type="Node3D" parent="." unique_id=1917138956]
+
+[node name="SHADER" parent="HOUSE" unique_id=1462919119 instance=ExtResource("11_rbqqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.0592594, -2.4972534)
+
+[node name="House2" parent="HOUSE" unique_id=588697503 instance=ExtResource("11_wi0gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13671398, 0)
+
+[node name="SHADER2" parent="HOUSE" unique_id=323074424 instance=ExtResource("11_rbqqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.1495, 0, -2.4972534)
+
+[node name="AreaLight3D" type="AreaLight3D" parent="HOUSE" unique_id=1978073114]
+transform = Transform3D(1, 0, 0, 0, -0.020866472, 0.99978226, 0, -0.99978226, -0.020866472, 7.5096383, 4.573099, 0)

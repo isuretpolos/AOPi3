@@ -35,3 +35,5 @@ window/size/viewport_height=900
 [rendering]
 
 lights_and_shadows/directional_shadow/size=7000
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/atlas_size=16000

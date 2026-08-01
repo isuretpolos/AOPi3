@@ -1,0 +1,41 @@
+[gd_scene format=4 uid="uid://bhidgrjibmq0w"]
+
+[ext_resource type="PackedScene" uid="uid://cfhpwhnmoyi6r" path="res://BLENDER/SHADER.glb" id="1_vlaif"]
+[ext_resource type="Material" uid="uid://dd63k1f5eu3s1" path="res://MATERIALS/orange_transparent.tres" id="2_pcnr6"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v6tow"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -62.15261, 2, 0.05422285, 119.31261),
+"format": 34896613377,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUA"),
+"name": "TRANSPARENT-SHADES",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 104,
+"vertex_data": PackedByteArray("AAAAAH+HAAD//wAANYMAAP//AAB/hwAAAAAAADWDAAAAAAAAipEAAP//AAA/jQAA//8AAIqRAAAAAAAAP40AAAAAAACVmwAA//8AAEqXAAD//wAAlZsAAAAAAABKlwAAAAAAAJ+lAAD//wAAVaEAAP//AACfpQAAAAAAAFWhAAAAAAAAqq8AAP//AABfqwAA//8AAKqvAAAAAAAAX6sAAAAAAAC0uQAA//8AAGq1AAD//wAAtLkAAAAAAABqtQAAAAAAAL/DAAD//wAAdL8AAP//AAC/wwAAAAAAAHS/AAAAAAAAys0AAP//AAB/yQAA//8AAMrNAAAAAAAAf8kAAAAAAADU1wAA//8AAIrTAAD//wAA1NcAAAAAAACK0wAAAAAAAN/hAAD//wAAlN0AAP//AADf4QAAAAAAAJTdAAAAAAAA6esAAP//AACf5wAA//8AAOnrAAAAAAAAn+cAAAAAAAD09QAA//8AAKnxAAD//wAA9PUAAAAAAACp8QAAAAAAAP//AAD//wAAtPsAAP//AAD//wAAAAAAALT7AAAAAP//SgQAAP////8AAAAA/////0oEAAAAAP//AAAAAAAA//9VDgAA/////woKAAD/////VQ4AAAAA//8KCgAAAAD//18YAAD/////FRQAAP////9fGAAAAAD//xUUAAAAAP//aiIAAP////8fHgAA/////2oiAAAAAP//Hx4AAAAA//90LAAA/////yooAAD/////dCwAAAAA//8qKAAAAAD//382AAD/////NDIAAP////9/NgAAAAD//zQyAAAAAP//ikAAAP////8/PAAA/////4pAAAAAAP//PzwAAAAA//+USgAA/////0pGAAD/////lEoAAAAA//9KRgAAAAD//59UAAD/////VFAAAP////+fVAAAAAD//1RQAAAAAP//qV4AAP////9fWgAA/////6leAAAAAP//X1oAAAAA//+0aAAA/////2lkAAD/////tGgAAAAA//9pZAAAAAD//79yAAD/////dG4AAP////+/cgAAAAD//3RuAAAAAP//yXwAAP////9/eAAA/////8l8AAAAAP//f3gAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bxnq3"]
+resource_name = "SHADER_Plane_003"
+_surfaces = [{
+"aabb": AABB(-1, 0, -62.15261, 2, 0.05422285, 119.31261),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAA="),
+"format": 34896613399,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUA"),
+"material": ExtResource("2_pcnr6"),
+"name": "TRANSPARENT-SHADES",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 104,
+"vertex_data": PackedByteArray("AAAAAH+H/7///wAANYP/v///AAB/h/+/AAAAADWD/78AAAAAipH/v///AAA/jf+///8AAIqR/78AAAAAP43/vwAAAACVm/+///8AAEqX/7///wAAlZv/vwAAAABKl/+/AAAAAJ+l/7///wAAVaH/v///AACfpf+/AAAAAFWh/78AAAAAqq//v///AABfq/+///8AAKqv/78AAAAAX6v/vwAAAAC0uf+///8AAGq1/7///wAAtLn/vwAAAABqtf+/AAAAAL/D/7///wAAdL//v///AAC/w/+/AAAAAHS//78AAAAAys3/v///AAB/yf+///8AAMrN/78AAAAAf8n/vwAAAADU1/+///8AAIrT/7///wAA1Nf/vwAAAACK0/+/AAAAAN/h/7///wAAlN3/v///AADf4f+/AAAAAJTd/78AAAAA6ev/v///AACf5/+///8AAOnr/78AAAAAn+f/vwAAAAD09f+///8AAKnx/7///wAA9PX/vwAAAACp8f+/AAAAAP///7///wAAtPv/v///AAD///+/AAAAALT7/78AAP//SgT/v/////8AAP+//////0oE/78AAP//AAD/vwAA//9VDv+//////woK/7//////VQ7/vwAA//8KCv+/AAD//18Y/7//////FRT/v/////9fGP+/AAD//xUU/78AAP//aiL/v/////8fHv+//////2oi/78AAP//Hx7/vwAA//90LP+//////yoo/7//////dCz/vwAA//8qKP+/AAD//382/7//////NDL/v/////9/Nv+/AAD//zQy/78AAP//ikD/v/////8/PP+//////4pA/78AAP//Pzz/vwAA//+USv+//////0pG/7//////lEr/vwAA//9KRv+/AAD//59U/7//////VFD/v/////+fVP+/AAD//1RQ/78AAP//qV7/v/////9fWv+//////6le/78AAP//X1r/vwAA//+0aP+//////2lk/7//////tGj/vwAA//9pZP+/AAD//79y/7//////dG7/v/////+/cv+/AAD//3Ru/78AAP//yXz/v/////9/eP+//////8l8/78AAP//f3j/v////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_v6tow")
+
+[node name="SHADER" unique_id=1462919119 instance=ExtResource("1_vlaif")]
+
+[node name="SHADES" parent="." index="0" unique_id=1840188520]
+mesh = SubResource("ArrayMesh_bxnq3")

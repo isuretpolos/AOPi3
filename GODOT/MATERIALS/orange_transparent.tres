@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dd63k1f5eu3s1"]
+
+[ext_resource type="Shader" uid="uid://1l7fg61p5ugh" path="res://MATERIALS/orange_transparent_visual.tres" id="1_5mbd0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5mbd0")

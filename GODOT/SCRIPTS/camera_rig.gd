@@ -5,6 +5,9 @@ extends Node3D
 @export var mouse_sensitivity: float = 0.003
 @export var panning_sensitivity: float = 0.01
 @export var padding_factor := 1.0
+# MAX MIN ZOOM
+@export var min_zoom_distance: float = 1.0
+@export var max_zoom_distance: float = 20.0
 
 var is_rotating := false
 var is_panning := false
@@ -93,8 +96,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	# Zoom with mouse wheel
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_UP:
-		current_distance *= 0.9
+		current_distance = clamp(current_distance * 0.9, min_zoom_distance, max_zoom_distance)
 		update_camera_position()
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-		current_distance *= 1.1
+		current_distance = clamp(current_distance * 1.1, min_zoom_distance, max_zoom_distance)
 		update_camera_position()

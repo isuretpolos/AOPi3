@@ -44,7 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if just_started:
 			just_started = false
 		else:
-			current_rotation += event.relative.x * sensitivity
+			current_rotation += -event.relative.x * sensitivity
 			current_rotation = clamp(current_rotation, max_rotation, min_rotation)
 			$KNOB.rotation.y = deg_to_rad(current_rotation)
 			update_current_value()
